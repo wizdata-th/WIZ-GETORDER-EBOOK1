@@ -1,0 +1,1269 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #252524;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #e3ea66 0%, #a2a04b 100%);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #eadb66 0%, #edaf43 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 50vh;
+            background: linear-gradient(135deg, #252524 0%, #3a3a3a 50%, #252524 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #eadf66, #764ba2);
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-element:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .floating-element:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin: center;
+            z-index: 10;
+            margin-left: 10%;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            color: #b0b0b0;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #666fea 0%, #624ba2 100%);
+            color: white;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(234, 214, 102, 0.4);
+        }
+
+        .book-mockup {
+            perspective: 1000px;
+            animation: fadeInRight 1s ease-out 0.6s both;
+        }
+
+        .book-3d {
+            width: 220px;
+            height: 290px;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateY(-15deg) rotateX(5deg);
+            transition: transform 0.3s ease;
+        }
+
+        .book-3d:hover {
+            transform: rotateY(-25deg) rotateX(10deg) scale(1.05);
+        }
+
+        .book-cover {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .book-cover img {
+    width: 120%;  /* ทำให้รูปภาพกว้างเต็มพื้นที่ของ .book-cover */
+    height: 130%; /* ทำให้รูปภาพสูงเต็มพื้นที่ของ .book-cover */
+    object-fit: cover; /* ครอบคลุมพื้นที่โดยไม่บิดเบี้ยว อาจมีการครอปบางส่วน */
+    /* หรือใช้ object-fit: contain; ถ้าต้องการให้รูปภาพทั้งรูปแสดงครบ โดยมีขอบว่างได้ */
+    display: block; /* ลบช่องว่างด้านล่าง img */
+     border-radius: 5px;
+}
+
+        .book-cover p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Social Proof */
+        .social-proof {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 15px 20px;
+            border-radius: 10px;
+            z-index: 1000;
+            animation: slideInRight 1s ease-out 2s both;
+        }
+
+        .live-viewers {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 5px;
+        }
+
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background: #4ade80;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 20px;
+            background: #1a1a1a;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 60px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: rgba(255,255,255,0.05);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.08);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #eadf66 0%, #a28c4b 100%);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 20px;
+            background: #252524;
+        }
+
+        .testimonial-card {
+            background: rgba(255,255,255,0.05);
+            padding: 40px;
+            border-radius: 20px;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #eae366;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 100px 20px;
+            background: #1a1a1a;
+            text-align: center;
+        }
+
+        .price-card {
+            background: rgba(255,255,255,0.05);
+            padding: 60px 40px;
+            border-radius: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+        }
+
+        .price-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            z-index: -1;
+        }
+
+        .original-price {
+            font-size: 1.5rem;
+            text-decoration: line-through;
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        .current-price {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .discount-badge {
+            background: linear-gradient(135deg, #ea6666 0%, #953636 100%);
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        /* Countdown Timer */
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .countdown-item {
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            min-width: 80px;
+        }
+
+        .countdown-number {
+            font-size: 2rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .countdown-label {
+            font-size: 0.8rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+        }
+
+        /* Sticky CTA Bar */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #4e47d7 0%, #7d41e4 100%);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .sticky-cta.show {
+            transform: translateY(0);
+        }
+
+        /* Exit Intent Popup */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.8);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .popup-content {
+            background: #252524;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 500px;
+            margin: 20px;
+            position: relative;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0.7;
+        }
+
+        .popup-close:hover {
+            opacity: 1;
+        }
+
+        .swal2-container {
+    z-index: 9999; /* กำหนดให้สูงกว่า z-index ของ order-form มากๆ */
+}
+
+        /* --- Order Form (Modal Overlay) --- */
+.order-form {
+    display: none; /* ซ่อนไว้เริ่มต้น */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85); /* Darker, slightly transparent overlay */
+    z-index: 1000;
+    display: flex; /* ใช้ flexbox จัดกึ่งกลาง */
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* เพิ่ม padding รอบๆ เพื่อไม่ให้ชิดขอบจอเกินไป */
+    box-sizing: border-box; /* สำคัญ: รวม padding ใน width/height */
+    animation: fadeIn 0.3s ease-out forwards; /* เพิ่ม animation ตอนแสดงผล */
+    -webkit-overflow-scrolling: touch; /* สำหรับ iOS smooth scrolling */
+}
+
+/* --- Form Container (The actual form box) --- */
+.form-container {
+    background: #252524; /* พื้นหลังเข้ม */
+    color: #f0f0f0; /* สีตัวอักษรหลัก */
+    max-width: 600px;
+    width: 100%; /* ทำให้ขยายเต็มความกว้างที่กำหนด max-width */
+    margin: 20px auto; /* ลด margin ด้านบน/ล่างลงเล็กน้อย */
+    padding: 30px; /* ลด padding ลงเล็กน้อย ให้พอดีกับขนาด */
+    border-radius: 15px; /* มุมโค้งมน */
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* เพิ่มเงาให้ดูมีมิติ */
+    transform: translateY(20px); /* เตรียมสำหรับ animation */
+    opacity: 0; /* เตรียมสำหรับ animation */
+    animation: slideInUp 0.4s ease-out 0.1s forwards; /* เพิ่ม animation ตอนแสดงผล */
+    display: flex; /* ใช้ flexbox เพื่อจัดวางเนื้อหาภายใน */
+    flex-direction: column; /* จัดเนื้อหาเป็นแนวตั้ง */
+    gap: 15px; /* ระยะห่างระหว่าง form-group */
+    max-height: 90vh; /* จำกัดความสูงสำหรับ mobile */
+    overflow-y: auto; /* ทำให้ scroll ได้เมื่อเนื้อหาเกิน */
+    -webkit-overflow-scrolling: touch; /* สำหรับ iOS smooth scrolling */
+}
+
+/* Header of the form */
+.form-container h2 {
+    color: #667eea; /* สีหัวข้อให้โดดเด่น */
+    text-align: center;
+    margin-bottom: 25px; /* ระยะห่างจากด้านล่าง */
+    font-size: 2em; /* ขนาดใหญ่ขึ้นเล็กน้อย */
+    font-weight: 700;
+}
+
+
+/* --- Form Group (สำหรับแต่ละ field) --- */
+.form-group {
+    margin-bottom: 15px; /* ลดระยะห่างระหว่าง field ลงเล็กน้อย */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600; /* ทำให้หนาขึ้นเล็กน้อย */
+    color: #ccc; /* สี label ให้เห็นชัดเจน */
+    font-size: 0.95em; /* ขนาดตัวอักษรของ label */
+}
+
+/* --- Input Fields & Select Dropdown --- */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="date"],
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #444; /* สีขอบ */
+    border-radius: 8px; /* มุมโค้งมน */
+    background: #1a1a1a; /* พื้นหลัง input ที่เข้มขึ้น */
+    color: white;
+    font-size: 1rem;
+    box-sizing: border-box; /* สำคัญ: รวม padding ใน width */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* เพิ่ม transition */
+}
+
+.form-group input[type="text"]::placeholder,
+.form-group input[type="email"]::placeholder,
+.form-group input[type="tel"]::placeholder,
+.form-group input[type="date"]::placeholder {
+    color: #888; /* สี placeholder */
+    opacity: 0.8;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #667eea; /* สีขอบเมื่อ focus */
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.4); /* เพิ่มเงาเรืองแสง */
+}
+
+/* Specific styling for date input */
+.form-group input[type="date"] {
+    /* อาจมีปัญหาเรื่องสีของ icon ในบาง browser */
+    filter: invert(1); /* ลอง invert สีของ icon */
+}
+
+
+/* --- File Upload Custom Styling --- */
+.file-upload {
+    position: relative;
+    overflow: hidden;
+    display: block; /* หรือ inline-block */
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px dashed #667eea; /* ขอบเป็นเส้นประสีม่วง */
+    border-radius: 8px;
+    background-color: #1a1a1a;
+    color: #ccc;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.file-upload input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* ซ่อน input จริงๆ */
+    cursor: pointer;
+}
+
+.file-upload:hover {
+    background-color: #2b2b2b; /* สีเข้มขึ้นเมื่อ hover */
+    border-color: #8a9ffc;
+}
+
+.file-upload #fileUploadText {
+    display: block; /* ให้ข้อความเป็นบล็อก */
+    font-size: 0.95em;
+    line-height: 1.4;
+}
+
+/* --- Dropdown (select) Specific Styling --- */
+.form-group select {
+    appearance: none; /* ซ่อน default arrow ของ browser */
+    -webkit-appearance: none; /* สำหรับ Safari */
+    -moz-appearance: none; /* สำหรับ Firefox */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23ccc" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>'); /* เพิ่ม custom arrow */
+    background-repeat: no-repeat;
+    background-position: right 15px center; /* จัดตำแหน่ง arrow */
+    background-size: 18px; /* ขนาด arrow */
+}
+
+.form-group select option {
+    background-color: #2a2a2a; /* พื้นหลังของแต่ละ option */
+    color: #eee; /* สีตัวอักษรของแต่ละ option */
+    padding: 10px;
+}
+
+/* --- Price Display --- */
+.form-group.price-display {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #4ade80; /* สีเขียวสำหรับราคา */
+    margin-top: 25px; /* ระยะห่างจากด้านบน */
+    margin-bottom: 25px;
+}
+
+.form-group.price-display span {
+    color: #fff; /* สีราคาหลัก */
+    font-size: 1.3em;
+    margin-left: 5px;
+}
+
+/* --- CTA Button in Form --- */
+.form-container .cta-button {
+    background-color: #667eea; /* สีปุ่มหลัก */
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%; /* ให้ปุ่มเต็มความกว้าง */
+    box-sizing: border-box;
+}
+
+.form-container .cta-button:hover {
+    background-color: #8a9ffc; /* สีเข้มขึ้นเมื่อ hover */
+    transform: translateY(-2px); /* ยกขึ้นเล็กน้อย */
+}
+
+.form-container .cta-button:active {
+    transform: translateY(0); /* กดลงไป */
+}
+
+/* --- Close Button for Popup --- */
+.popup-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #aaa;
+    font-size: 2.5em; /* ขนาดใหญ่ขึ้น */
+    cursor: pointer;
+    transition: color 0.3s ease;
+    line-height: 1; /* จัดแนวตั้งให้สวยงาม */
+}
+
+.popup-close:hover {
+    color: #fff;
+    transform: rotate(90deg); /* หมุนเมื่อ hover */
+}
+
+
+/* --- Keyframe Animations --- */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+    /* เพื่อจัดการสีของตัวอักษรใน Date picker บนบางเบราว์เซอร์ */
+/* โดยเฉพาะ Chrome ที่ตัวเลขวันที่ในช่อง input เป็นสีเทา */
+.form-group input[type="date"]::-webkit-datetime-edit {
+    color: white; /* เปลี่ยนสีตัวอักษรให้เป็นสีขาว */
+}
+.form-group input[type="date"]::-webkit-inner-spin-button,
+.form-group input[type="date"]::-webkit-calendar-picker-indicator {
+    /* ใช้ filter เพื่อปรับสี icon ปฏิทินใน Chrome/Safari ให้เข้ากับธีม */
+    filter: invert(1); /* สลับสีจากดำเป็นขาว หรือขาวเป็นดำ */
+    cursor: pointer;
+}
+
+/* --- Responsive Adjustments (Mobile Optimization) --- */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 25px; /* ลด padding สำหรับมือถือ */
+        margin: 15px; /* ลด margin รอบๆ */
+        border-radius: 10px; /* มุมโค้งมนน้อยลง */
+        max-height: 95vh; /* ใช้พื้นที่จอมากขึ้น */
+        overflow-y: auto; /* Ensure scrolling if content is too tall */
+    }
+
+    .form-container h2 {
+        font-size: 1.8em; /* ลดขนาดหัวข้อ */
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        font-size: 0.9em; /* ลดขนาด label */
+    }
+
+    .form-group input[type="date"] {
+        padding: 10px 12px; /* ลด padding input สำหรับมือถือ */
+        font-size: 0.95rem; /* ลดขนาด font input */
+    }
+
+    .form-group select {
+        padding: 10px 12px; /* ลด padding input */
+        font-size: 0.95rem; /* ลดขนาด font input */
+    }
+
+    .file-upload {
+        padding: 10px 12px;
+        font-size: 0.9em;
+    }
+
+    .form-container .cta-button {
+        padding: 12px 20px;
+        font-size: 1.1em;
+    }
+
+    .popup-close {
+        font-size: 2em; /* ลดขนาดปุ่มปิด */
+        top: 10px;
+        right: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .order-form {
+        padding: 10px;
+    }
+
+    .form-container {
+        padding: 20px;
+        border-radius: 8px;
+        margin: 10px;
+    }
+
+    .form-container h2 {
+        font-size: 1.6em;
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        font-size: 0.85em;
+    }
+
+    .form-group input[type="date"] {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+    
+    .form-group select {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+
+    .file-upload {
+        padding: 8px 10px;
+    }
+
+    .form-container .cta-button {
+        padding: 10px 15px;
+        font-size: 1em;
+    }
+
+    .popup-close {
+        font-size: 1.8em;
+    }
+}
+
+
+        .file-upload {
+            border: 2px dashed #667eea;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .file-upload:hover {
+            background: rgba(102, 126, 234, 0.1);
+        }
+
+        .file-upload input {
+            display: none;
+        }
+
+        /* Lead Magnet */
+        .lead-magnet {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            padding: 40px 20px;
+            margin: 40px 0;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        /* Purchase Notifications */
+        .purchase-notification {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(234, 221, 102, 0.9);
+            color: rgb(43, 34, 2);
+            font-weight: bold;
+            padding: 15px 20px;
+            border-radius: 10px;
+            z-index: 1000;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .purchase-notification.show {
+            transform: translateX(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-content {
+                gap: 40px;
+                padding: 0 15px;
+            }
+
+            .hero-text h1 {
+                font-size: 3rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 90vh;
+                padding: 20px 0;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 30px;
+                padding: 0 15px;
+            }
+
+            .hero-text h1 {
+                font-size: 2.2rem;
+                line-height: 1.3;
+            }
+
+            .hero-text p {
+                font-size: 1.1rem;
+                margin-bottom: 25px;
+            }
+
+            .cta-button {
+                padding: 16px 35px;
+                font-size: 1rem;
+                width: 100%;
+                max-width: 320px;
+            }
+
+            .book-3d {
+    width: 220px;
+    height: 290px;
+}
+
+.book-cover {
+    padding: 30px 15px; /* มี padding ทำให้รูปภาพไม่เต็มพื้นที่ */
+}
+
+.book-cover h3 {
+    font-size: 1.3rem; /* ไม่จำเป็นแล้วเพราะไม่มี h3 */
+}
+
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .feature-card {
+                padding: 30px 20px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 40px;
+            }
+
+            .countdown {
+                flex-wrap: wrap;
+                gap: 10px;
+                justify-content: center;
+            }
+
+            .countdown-item {
+                min-width: 70px;
+                padding: 15px 10px;
+            }
+
+            .countdown-number {
+                font-size: 1.5rem;
+            }
+
+            .countdown-label {
+                font-size: 0.7rem;
+            }
+
+            .price-card {
+                padding: 40px 25px;
+                margin: 0 15px;
+            }
+
+            .current-price {
+                font-size: 2.5rem;
+            }
+
+            .original-price {
+                font-size: 1.3rem;
+            }
+
+            .sticky-cta {
+                font-size: 0.9rem;
+                padding: 12px 15px;
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .sticky-cta button {
+                width: 100%;
+                max-width: 200px;
+            }
+
+            .social-proof {
+                top: 10px;
+                right: 10px;
+                left: 10px;
+                text-align: center;
+                font-size: 0.85rem;
+                padding: 12px 15px;
+            }
+
+            .testimonial-card {
+                margin: 15px;
+                padding: 30px 20px;
+            }
+
+            .testimonial-text {
+                font-size: 1rem;
+            }
+
+            .lead-magnet {
+                padding: 30px 15px;
+                margin: 30px 15px;
+            }
+
+            .lead-magnet div {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .lead-magnet input {
+                width: 100%;
+                min-width: auto;
+            }
+
+            .lead-magnet button {
+                width: 100%;
+            }
+
+            .purchase-notification {
+                bottom: 15px;
+                left: 15px;
+                right: 15px;
+                font-size: 0.9rem;
+                padding: 12px 15px;
+            }
+
+            .scarcity-alert {
+                font-size: 0.85rem;
+                padding: 8px 15px;
+                margin: 15px 0;
+            }
+
+            .floating-element {
+                display: none;
+            }
+         
+
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-text p {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                padding: 14px 25px;
+                font-size: 0.95rem;
+            }
+
+            .book-3d {
+                width: 180px;
+                height: 240px;
+            }
+
+            .book-cover {
+                padding: 20px 10px;
+            }
+
+            .book-cover h3 {
+                font-size: 1.1rem;
+            }
+
+            .book-cover p {
+                font-size: 0.8rem;
+            }
+
+            .section-title {
+                font-size: 1.7rem;
+            }
+
+            .feature-card {
+                padding: 25px 15px;
+            }
+
+            .feature-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+
+            .countdown-item {
+                min-width: 60px;
+                padding: 12px 8px;
+            }
+
+            .countdown-number {
+                font-size: 1.3rem;
+            }
+
+            .current-price {
+                font-size: 2.2rem;
+            }
+
+            .price-card {
+                padding: 30px 20px;
+            }
+
+            .popup-content {
+                margin: 10px;
+                padding: 25px 20px;
+                max-width: calc(100vw - 20px);
+            }
+
+            .form-container {
+                margin: 20px auto;
+                padding: 25px 20px;
+                max-width: calc(100vw - 20px);
+            }
+
+            .form-group input,
+            .form-group select {
+                padding: 10px 12px;
+                font-size: 0.95rem;
+            }
+
+            .file-upload {
+                padding: 20px 15px;
+                font-size: 0.9rem;
+            }
+
+            .testimonial-card {
+                margin: 10px;
+                padding: 25px 15px;
+            }
+
+            .social-proof {
+                position: static;
+                margin: 15px;
+                text-align: center;
+            }
+
+            .purchase-notification {
+                position: static;
+                margin: 15px;
+                transform: none !important;
+                border-radius: 10px;
+            }
+
+            .lead-magnet h2 {
+                font-size: 1.5rem;
+            }
+
+            .discount-badge {
+                font-size: 0.8rem;
+                padding: 6px 15px;
+            }
+        }
+
+        /* Touch-friendly interactions for mobile */
+        @media (hover: none) and (pointer: coarse) {
+            .cta-button:hover,
+            .feature-card:hover,
+            .book-3d:hover {
+                transform: none;
+            }
+            
+            .cta-button:active {
+                transform: scale(0.98);
+            }
+
+            .feature-card:active {
+                transform: translateY(-5px);
+            }
+
+            .book-3d:active {
+                transform: rotateY(-20deg) rotateX(8deg) scale(1.02);
+            }
+
+            /* Disable hover effects that don't work well on touch */
+            .file-upload:hover {
+                background: rgba(102, 126, 234, 0.1);
+            }
+        }
+
+        /* Fix for iOS Safari viewport issues */
+        @supports (-webkit-touch-callout: none) {
+            .hero {
+                min-height: 100vh;
+                min-height: -webkit-fill-available;
+            }
+        }
+
+        /* Ensure proper spacing on very small screens */
+        @media (max-width: 360px) {
+            .hero-text h1 {
+                font-size: 1.6rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .current-price {
+                font-size: 2rem;
+            }
+
+            .countdown {
+                gap: 8px;
+            }
+
+            .countdown-item {
+                min-width: 55px;
+                padding: 10px 6px;
+            }
+
+            .popup-content,
+            .form-container {
+                margin: 5px;
+                padding: 20px 15px;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        #formPrice {
+        transition: all 0.3s ease;
+        display: inline-block;
+        }
+
+            /* สำหรับ radio group */
+.form-group .radio-group {
+    display: flex;
+    gap: 15px; /* ระยะห่างระหว่างตัวเลือก */
+    flex-wrap: wrap; /* ให้ขึ้นบรรทัดใหม่ถ้ามีตัวเลือกเยอะ */
+}
+
+.form-group .radio-group input[type="radio"] {
+    margin-right: 5px; /* ระยะห่างระหว่าง radio button กับ label */
+}
+
+.form-group .radio-group label {
+    font-weight: normal; /* ทำให้ label ไม่เป็น bold เหมือน label หลัก */
+    margin-bottom: 0; /* ลบ margin ด้านล่าง */
+    display: inline-flex; /* จัดให้ label และ radio button อยู่ในบรรทัดเดียวกัน */
+    align-items: center; /* จัดให้อยู่ตรงกลางแนวตั้ง */
+    cursor: pointer;
+}
+
+/* สำหรับ select dropdown */
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+    color: #333;
+    font-size: 1em;
+    box-sizing: border-box; /* รวม padding และ border ในความกว้าง */
+}
+
+.form-group select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+/* --- ส่วนของ CSS สำหรับ Dropdown (select) --- */
+
+.form-group select {
+    width: 100%; /* ทำให้เต็มความกว้างของ form-group */
+    padding: 12px 15px; /* เพิ่ม padding ให้มีพื้นที่มากขึ้น */
+    border: 1px solid #444; /* สีขอบ */
+    border-radius: 8px; /* มุมโค้งมน */
+    background-color: #333; /* สีพื้นหลัง */
+    color: #eee; /* สีตัวอักษร */
+    font-size: 1em; /* ขนาดตัวอักษร */
+    appearance: none; /* ซ่อน default arrow ของ browser */
+    -webkit-appearance: none; /* สำหรับ Safari */
+    -moz-appearance: none; /* สำหรับ Firefox */
+    cursor: pointer;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23eee" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>'); /* เพิ่ม custom arrow */
+    background-repeat: no-repeat;
+    background-position: right 15px center; /* จัดตำแหน่ง arrow */
+    background-size: 18px; /* ขนาด arrow */
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.form-group select:hover {
+    border-color: #667eea; /* สีขอบเมื่อ hover */
+}
+
+.form-group select:focus {
+    border-color: #667eea; /* สีขอบเมื่อ focus */
+    outline: none; /* ลบ outline default */
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.4); /* เพิ่มเงาเมื่อ focus */
+    background-color: #444; /* เปลี่ยนสีพื้นหลังเล็กน้อยเมื่อ focus */
+}
+
+.form-group select option {
+    background-color: #333; /* พื้นหลังของแต่ละ option */
+    color: #eee; /* สีตัวอักษรของแต่ละ option */
+    padding: 10px; /* เพิ่ม padding ให้แต่ละ option */
+}
+}
